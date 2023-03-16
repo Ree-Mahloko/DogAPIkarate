@@ -6,7 +6,7 @@ class DogAPI {
 
     @Karate.Test
     Karate testStatus() {
-        return Karate.run("classpath:DogAPI").relativeTo(getClass());
+        return Karate.run("DogAPI").relativeTo(getClass());
     }
 
 }
