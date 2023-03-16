@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"DogAPI\/deletesavedDogAPI[1:8]","start":1679008183223,"end":1679008184087,"title":"DogAPI\/deletesavedDogAPI[1:8] 01:09:43.223-01:09:44.087 Delete a saved favorite by ID"},{"id":2,"group":1,"content":"DogAPI\/GetDogAPI[1:8]","start":1679008184165,"end":1679008184997,"title":"DogAPI\/GetDogAPI[1:8] 01:09:44.165-01:09:44.997 Post a favorite with a random image_id"},{"id":3,"group":1,"content":"DogAPI\/getVotebyidDogAPI[1:7]","start":1679008185036,"end":1679008185814,"title":"DogAPI\/getVotebyidDogAPI[1:7] 01:09:45.036-01:09:45.814 Retrieve a Vote by ID"},{"id":4,"group":1,"content":"DogAPI\/PostDogAPI[1:8]","start":1679008185851,"end":1679008186740,"title":"DogAPI\/PostDogAPI[1:8] 01:09:45.851-01:09:46.740 Post a favorite with a random image_id"},{"id":5,"group":1,"content":"DogAPI\/putDownvoteImage-idDogAPI[1:3]","start":1679008186787,"end":1679008187648,"title":"DogAPI\/putDownvoteImage-idDogAPI[1:3] 01:09:46.787-01:09:47.648 Put a downvote for an image ID"},{"id":6,"group":1,"content":"DogAPI\/putUpVote-negValueDogAPI[1:8]","start":1679008187686,"end":1679008188572,"title":"DogAPI\/putUpVote-negValueDogAPI[1:8] 01:09:47.686-01:09:48.572 Upvoting an image by a user with a negative vote"},{"id":7,"group":1,"content":"DogAPI\/Retrieve&logAllCategoriesDogAPI[1:8]","start":1679008188599,"end":1679008189324,"title":"DogAPI\/Retrieve&logAllCategoriesDogAPI[1:8] 01:09:48.599-01:09:49.324 Retrieving categories and logging each category"},{"id":8,"group":1,"content":"DogAPI\/savePostDogAPI[1:8]","start":1679008189358,"end":1679008190224,"title":"DogAPI\/savePostDogAPI[1:8] 01:09:49.358-01:09:50.224 Post a favorite without a sub ID"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
