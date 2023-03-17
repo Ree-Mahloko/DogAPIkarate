@@ -28,8 +28,12 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
+<<<<<<< HEAD
       run: mvn test -Dtest=DogAPITestRunner --file pom.xml
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
       uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+=======
+      run: mvn test --file pom.xml
+>>>>>>> a1d6b3a29465e9b2491bd33faa6ae0e223bf9e9c
